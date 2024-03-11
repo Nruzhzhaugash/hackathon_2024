@@ -4,6 +4,7 @@ import Button from "@/shared/ui/Button/Button";
 
 import styles from "./styles.module.scss";
 import { ReactNode } from "react";
+import Logo from "@/shared/ui/icons/header/logo";
 
 interface HeaderProps {
   children?: ReactNode;
@@ -12,14 +13,16 @@ interface HeaderProps {
 
 export default function Header({ children, type }: HeaderProps) {
   return (
-    <header className='container bg-primary flex justify-between items-center py-[21px]'>
-      <div className={styles.logo}>
-        <Image src="" width={170} height={64} alt="logo" />
-      </div>
-      <Navbar />
-      <div className="flex gap-[53px]">
-        <Button label="Войти" className="text-link uppercase text-[32px]"/>
-        <Button label="Регистрация" className="text-link uppercase text-[32px]" />
+    <header className='bg-primary py-[21px]'>
+      <div className="flex items-center justify-between container">
+        <div className={styles.logo}>
+          <Logo />
+        </div>
+        <Navbar />
+        <div className="flex items-center justify-center gap-[53px]">
+          <Button label="Войти" className="text-link uppercase text-base font-extrabold"/>
+          <Button label="Регистрация" className="text-link uppercase text-base font-extrabold"/>
+        </div>
       </div>
     </header>
   );

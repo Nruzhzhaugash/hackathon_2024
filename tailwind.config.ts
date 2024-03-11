@@ -9,7 +9,7 @@ const config: Config = {
       sm: '480px',
       md: '768px',
       lg: '1140px',
-      xl: '1440px',
+      xl: '1512px',
     },
     extend: {
       fontSize: {

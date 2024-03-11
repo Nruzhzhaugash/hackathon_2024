@@ -10,20 +10,21 @@ interface LayoutProps {
 export default function Layout({ children, type }: LayoutProps) {
   return (
     <main className="main">
-      {type === "login" || type === "profile" ? (
+      {type === "login" && (
         <>
-          <Header>
-            {children}
-          </Header>
-          <Footer />
-        </>
-      ) : (
-        <>
-          <Header/>
+          <Header />
             {children}
           <Footer />
         </>
-      )} 
+      )}
+      {type === "profile" && (
+        <>
+          <Header />
+            {children}
+          <Footer />
+        </>
+      )}
     </main>
-  )
+  );
 }
+
