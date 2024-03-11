@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
-// import { Inter } from "next/font/google" ;
 import localFont from 'next/font/local';
 import "./styles/globals.css";
 
-// const inter = Inter({ subsets: ["latin", "cyrillic"] });
-
 const myFont = localFont({
   src: '../../public/fonts/keetano_katana.ttf',
-  display: 'swap'
+  display: 'swap',
+  variable: '--font-keetano'
+})
+const obrazec = localFont({
+  src: '../../public/fonts/Obrazec-2.ttf',
+  display: 'swap',
+  variable: '--font-obrazec'
 })
 
 export const metadata: Metadata = {
@@ -22,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={myFont.className}>
+      <body className={`${myFont.className} ${obrazec.variable}`}>
         {children}
       </body>
     </html>
