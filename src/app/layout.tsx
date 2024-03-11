@@ -1,11 +1,22 @@
 import type { Metadata } from "next";
-// import { Inter } from "next/font/google" ;
 import localFont from "next/font/local";
+import cn from "classnames";
 import "./styles/globals.css";
 
-const myFont = localFont({
+const katana = localFont({
   src: "../../public/fonts/keetano_katana.ttf",
   display: "swap",
+  variable: "--font-keetano",
+});
+const obrazec = localFont({
+  src: "../../public/fonts/Obrazec-2.ttf",
+  display: "swap",
+  variable: "--font-obrazec",
+});
+const relieve = localFont({
+  src: "../../public/fonts/Relieve.ttf",
+  display: "swap",
+  variable: "--font-relieve",
 });
 
 export const metadata: Metadata = {
@@ -20,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={myFont.className}>{children}</body>
+      <body className={cn(katana.className, "bg-link")}>{children}</body>
     </html>
   );
 }
