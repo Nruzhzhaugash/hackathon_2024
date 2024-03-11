@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import cn from "classnames";
 import "./styles/globals.css";
 
-const myFont = localFont({
+const katana = localFont({
   src: "../../public/fonts/keetano_katana.ttf",
   display: "swap",
   variable: "--font-keetano",
@@ -30,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${myFont.className} ${obrazec.variable} ${relieve.variable}`}>
+      <body className={`${katana.className} ${obrazec.variable} ${relieve.variable}`}>
         {children}
       </body>
     </html>
