@@ -3,15 +3,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./styles/globals.css";
 
-// const inter = Inter({ subsets: ["latin", "cyrillic"] });
-
 const myFont = localFont({
   src: "../../public/fonts/keetano_katana.ttf",
-  display: "swap",
-});
-
-const relieve = localFont({
-  src: "../../public/fonts/Relieve.ttf",
   display: "swap",
 });
 
