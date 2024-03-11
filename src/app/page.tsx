@@ -1,11 +1,14 @@
 // export { Home as default } from "../pages/Home/ui";
+import { MainPage } from "@/pages/Main/ui/MainPage";
+import Layout from "@/widgets/Layout/Layout";
 
-import Header from "@/widgets/Header/ui/Header";
 
 export default function Home() {
   return (
-    <main>
-      <p>i am main</p>
-    </main>
+    <Layout >
+      <main className="container">
+        <MainPage />
+      </main>
+    </Layout>
   );
 }

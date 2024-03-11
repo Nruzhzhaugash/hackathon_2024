@@ -1,29 +1,15 @@
 import React from "react";
 import Link from "next/link";
-import styles from "./styles.module.scss";
+// import styles from "./styles.module.scss";
 
 export default function Navbar() {
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.menu}>
-        <ul>
-          <li>
-            <Link href="/about">о клубе</Link>
-          </li>
-          <li>
-            <Link href="/schedule">расписание</Link>
-          </li>
-          <li>
-            <Link href="/catalog">каталог</Link>
-          </li>
-          <li>
-            <Link href="/raiting">рейтинг</Link>
-          </li>
-          <li>
-            <Link href="/shop">магазин</Link>
-          </li>
-        </ul>
-      </div>
+    <nav className='flex gap-11'>
+      <Link href='' className="whitespace-nowrap  uppercase font-extrabold text-link text-[32px]">О клубе</Link>
+      <Link href='' className="whitespace-nowrap uppercase font-extrabold text-link text-[32px]">Расписание</Link>
+      <Link href='' className="whitespace-nowrap uppercase font-extrabold text-link text-[32px]">Каталог</Link>
+      <Link href='' className="whitespace-nowrap uppercase font-extrabold text-link text-[32px]">Рейтинг</Link>
+      <Link href='' className="whitespace-nowrap uppercase font-extrabold text-link text-[32px]">Магазин</Link>
     </nav>
   );
 }

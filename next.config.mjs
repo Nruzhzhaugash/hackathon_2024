@@ -10,7 +10,7 @@ const nextConfig = {
   // Перезапустите сервер Next.js после изменения этой конфигурации
   // assetPrefix: 'YOUR_ASSET_PREFIX', // Если используется
 
-  assetPrefix: "/fonts",
+  // assetPrefix: "/fonts",
 };
 
 export default nextConfig;
