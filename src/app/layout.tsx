@@ -3,10 +3,15 @@ import localFont from "next/font/local";
 import cn from "classnames";
 import "./styles/globals.css";
 
-const katana = localFont({
+const keetano = localFont({
   src: "../../public/fonts/keetano_katana.ttf",
   display: "swap",
   variable: "--font-keetano",
+});
+const keetanoKB = localFont({
+  src: "../../public/fonts/keetano_katana_killbill.ttf",
+  display: "swap",
+  variable: "--font-keetanoKB",
 });
 const obrazec = localFont({
   src: "../../public/fonts/Obrazec-2.ttf",
@@ -17,6 +22,21 @@ const relieve = localFont({
   src: "../../public/fonts/Relieve.ttf",
   display: "swap",
   variable: "--font-relieve",
+});
+const involveSB = localFont({
+  src: "../../public/fonts/Involve-SemiBold.ttf",
+  display: "swap",
+  variable: "--font-involveSB",
+});
+const involveRG = localFont({
+  src: "../../public/fonts/Involve-Regular.ttf",
+  display: "swap",
+  variable: "--font-involveRG",
+});
+const involveBQ = localFont({
+  src: "../../public/fonts/Involve-Oblique.ttf",
+  display: "swap",
+  variable: "--font-involveBQ",
 });
 
 export const metadata: Metadata = {
@@ -31,7 +51,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(katana.className, "bg-link")}>{children}</body>
+      <body
+        className={cn(
+          keetano.className,
+          keetanoKB.variable,
+          obrazec.variable,
+          relieve.variable,
+          involveSB.variable,
+          involveRG.variable,
+          involveBQ.variable,
+          "bg-link"
+        )}
+      >
+        {children}
+      </body>
     </html>
   );
 }

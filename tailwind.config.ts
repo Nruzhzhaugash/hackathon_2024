@@ -1,7 +1,10 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "node_modules/flowbite-react/lib/esm/**/*.js",
+  ],
   theme: {
     screens: {
       sm: "480px",
@@ -33,10 +36,14 @@ const config: Config = {
       fontFamily: {
         obrazec: ["var(--font-obrazec)"],
         relieve: ["var(--font-relieve)"],
-        katana: ["var(--font-keetano)"],
+        keetano: ["var(--font-keetano)"],
+        keetanoKB: ["var(--font-keetanoKB)"],
+        involveSB: ["var(--font-involveSB)"],
+        involveRG: ["var(--font-involveRG)"],
+        involveBQ: ["var(--font-involveBQ)"],
       },
     },
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 };
 export default config;

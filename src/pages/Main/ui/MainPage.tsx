@@ -2,9 +2,7 @@ import Button from "@/shared/ui/Button/Button";
 import NewsFeed from "@/features/news/ui/News";
 // import Raiting from "@/features/raiting/ui/Raiting";
 import Articles from "@/features/articles/ui/Articles";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Slider from "@/features/Slider/ui/Slider";
 
 const newData = [
   {
@@ -48,28 +46,7 @@ export const MainPage = () => {
   return (
     <section>
       <div className="mt-[60px] mb-[100px] relative h-[700px] w-[1295px] flex items-center justify-center">
-        <div className="absolute inset-0 overflow-hidden">
-          <img
-            className="w-full h-full object-cover"
-            src="/main/people.png"
-            alt="background"
-          />
-        </div>
-        <div className="relative flex flex-col mt-[260px] items-center justify-center z-10 text-center text-link">
-          <h1 className="text-2xl font-bold mb-4">
-            Следующая игра состоится 9 марта 2024
-          </h1>
-          <Button
-            className="bg-link text-primary text-2xl w-[380px] h-[100px] my-[38px] py-[24px] px-[70px]"
-            label="УЧАСТВОВАТЬ"
-          />
-          <div className="text-center w-[885px] mb-[130px]">
-            <p className="text-xl">
-              КАФЕДРА ВКУСА м. Ломоносовский проспект, Ломоносовский пр-кт,
-              д.29, к. 3
-            </p>
-          </div>
-        </div>
+        <Slider />
       </div>
       <div className="my-[100px]">
         <h2 className="text-2xl mb-[82px]">

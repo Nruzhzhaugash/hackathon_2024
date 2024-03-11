@@ -7,31 +7,31 @@ export default function Navbar() {
     <nav className="flex items-center gap-11">
       <Link
         href=""
-        className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-lg"
+        className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-lg text-[32px]"
       >
         О клубе
       </Link>
       <Link
         href=""
-        className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-base"
+        className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         Расписание
       </Link>
       <Link
         href=""
-        className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-base"
+        className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         Новости
       </Link>
       <Link
         href=""
-        className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-base"
+        className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         Рейтинг
       </Link>
       <Link
         href=""
-        className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-base"
+        className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         Магазин
       </Link>
