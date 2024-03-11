@@ -54,8 +54,8 @@ export default function Footer() {
       </div>
       <FooterLink />
       <div className="flex items-center justify-center flex-col gap-2.5">
-        <h3 className="text-link text-lg font-extrabold">© 2022 — Клуб «SHOWTIME»</h3>
-        <h3 className="text-link font-bold text-lg">Политика конфиденциальности</h3>
+        <h3 className="text-link tracking-[1px] font-obrazec text-lg font-bold"><span className="text-[32px] font-keetano">©</span> 2022 — Клуб «SHOWTIME»</h3>
+        <h3 className="text-link font-obrazec font-bold text-lg">Политика конфиденциальности</h3>
       </div>
     </footer>
   )

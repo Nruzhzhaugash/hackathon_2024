@@ -32,6 +32,8 @@ const config: Config = {
       },
       fontFamily: {
         obrazec: ["var(--font-obrazec)"],
+        relieve: ["var(--font-relieve)"],
+        keetano: ["var(--font-keetano)"],
       },
     },
   },

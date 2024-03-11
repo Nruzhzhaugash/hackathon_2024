@@ -19,8 +19,8 @@ export default function Header({ children, type }: HeaderProps) {
         </Link>
         <Navbar />
         <div className="flex items-center justify-center gap-[53px]">
-          <Button label="Войти" className="text-link uppercase text-base font-extrabold"/>
-          <Button label="Регистрация" className="text-link uppercase text-base font-extrabold"/>
+          <Button label="Войти" className="text-link uppercase text-[32px] font-obrazec font-extrabold"/>
+          <Button label="Регистрация" className="text-link uppercase text-[32px] font-obrazec font-extrabold"/>
         </div>
       </div>
     </header>

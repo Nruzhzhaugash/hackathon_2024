@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${myFont.className} ${obrazec.variable}`}>
+      <body className={`${myFont.className} ${obrazec.variable} ${relieve.variable}`}>
         {children}
       </body>
     </html>
