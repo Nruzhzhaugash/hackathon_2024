@@ -15,11 +15,11 @@ export default function Footer() {
           <h1 className="whitespace-nowrap text-xl text-link mb-6 font-bold">Подпишись на нашу рассылку</h1>
           <h3 className="text-lg font-bold mb-[22px] text-link">Электронная почта:</h3>
           <form className="mb-[25px] flex items-center gap-2.5">
-            <div className="px-[50px] py-[11px] bg-link">
+            <div className="px-[50px] py-[7px] bg-link">
               <Input 
                 placeholder="Введите свою почту"
                 type="email" 
-                className="text-lg w-[245px] font-bold px-[20px] footer__input text-brown" 
+                className="text-lg w-[245px] font-bold px-[20px] footer__input text-brown focus:border-none focus:outline-none" 
                 autoComplete="off"
               />
             </div>
