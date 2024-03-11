@@ -5,13 +5,13 @@ export default function Navbar() {
   return (
     <nav className="flex items-center gap-11">
       <Link
-        href=""
+        href="/"
         className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         О клубе
       </Link>
       <Link
-        href=""
+        href="/"
         className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         Расписание
@@ -23,7 +23,7 @@ export default function Navbar() {
         Новости
       </Link>
       <Link
-        href=""
+        href="/rating"
         className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         Рейтинг
