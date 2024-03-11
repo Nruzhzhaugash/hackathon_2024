@@ -2,7 +2,7 @@ export const MainPage = () => {
   return (
     <section>
       <div>
-        <h1>Home Pages</h1>
+        <h1>HOME HOME</h1>
       </div>
     </section>
   );
