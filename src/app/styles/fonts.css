@@ -1,0 +1,17 @@
+/* fonts.css */
+@font-face {
+  font-family: "Obrazec";
+  src: url("/fonts/Obrazec-2.woff2") format("woff2"),
+    url("/fonts/Obrazec-2.woff") format("woff"),
+    url("/fonts/Obrazec-2.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Relieve";
+  src: url("/fonts/Relieve.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Keetano Katana";
+  src: url("/fonts/Relieve.ttf") format("truetype");
+}

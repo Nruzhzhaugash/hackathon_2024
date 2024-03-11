@@ -1,0 +1,12 @@
+.footer__grid {
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 160px;
+
+  .footer__input {
+    color: rgba(67, 25, 13, 0.50);
+  
+  &::placeholder {
+    color: rgba(67, 25, 13, 0.50);
+  }
+  }
+}
