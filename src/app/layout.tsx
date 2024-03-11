@@ -1,7 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google" ;
+import localFont from "next/font/local";
 import "./styles/globals.css";
-const inter = Inter({ subsets: ["latin", "cyrillic"] });
+
+// const inter = Inter({ subsets: ["latin", "cyrillic"] });
+
+const myFont = localFont({
+  src: "../../public/fonts/keetano_katana.ttf",
+  display: "swap",
+});
+
+const relieve = localFont({
+  src: "../../public/fonts/Relieve.ttf",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Mafia site",
@@ -15,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={myFont.className}>{children}</body>
     </html>
   );
 }
