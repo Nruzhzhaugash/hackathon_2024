@@ -17,7 +17,7 @@ export default function Navbar() {
         Расписание
       </Link>
       <Link
-        href=""
+        href="/news"
         className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         Новости
