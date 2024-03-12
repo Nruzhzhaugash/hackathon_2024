@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav className="flex items-center gap-11">
       <Link
-        href=""
+        href="/about"
         className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-lg text-[32px]"
       >
         О клубе
