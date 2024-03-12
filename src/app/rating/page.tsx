@@ -1,4 +1,4 @@
-import RatingPage from "@/pages/RatingPlayer/ui/RaringPlayer";
+import RatingPage from "@/pages/RatingPlayer/ui/RatingPlayer";
 import Layout from "@/widgets/Layout/Layout";
 
 export default function Rating() {

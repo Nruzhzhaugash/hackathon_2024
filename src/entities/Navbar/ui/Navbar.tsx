@@ -11,7 +11,7 @@ export default function Navbar() {
         О клубе
       </Link>
       <Link
-        href="/"
+        href="/shedule"
         className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         Расписание

@@ -1,7 +1,7 @@
 'use client'
+import { useState } from "react"
 import PlayerTable from "@/entities/PlayersTable/ui/PlayerTable";
 import Pagination from "@/features/pagination/ui/pagination";
-import { useState } from "react"
 
 const data = [
   {id: 1, name: 'Южная', points: 18, koff: "1.00", trophy: 34, games: 4, wins: 4, loses: 0},
