@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-// import styles from "./styles.module.scss";
 
 export default function Navbar() {
   return (
@@ -12,7 +11,7 @@ export default function Navbar() {
         О клубе
       </Link>
       <Link
-        href=""
+        href="/"
         className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         Расписание
@@ -24,7 +23,7 @@ export default function Navbar() {
         Новости
       </Link>
       <Link
-        href=""
+        href="/rating"
         className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         Рейтинг

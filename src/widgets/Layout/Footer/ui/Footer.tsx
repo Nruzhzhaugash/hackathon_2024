@@ -23,7 +23,7 @@ export default function Footer() {
               <Input
                 placeholder="Введите свою почту"
                 type="email"
-                className="text-lg w-[245px] font-bold px-[20px] footer__input text-brown"
+                className="text-lg w-[245px] font-bold px-[20px] footer__input text-brown focus:border-none focus:outline-none"
                 autoComplete="off"
               />
             </div>
