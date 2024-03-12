@@ -71,14 +71,56 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-      <div className="my-[120px]">
-        <h2 className="text-[48px] font-keetanoKB">Часто задаваемые вопросы</h2>
-        <div className="text-center w-[810px] mb-[50px]">
-          <p className="text-base font-involveBQ">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero
-            volutpat sed cras ornare arcu dui vivamus.
-          </p>
+      <div className="my-[120px] text-primary">
+        <div className="flex flex-col items-center justify-between mb-[50px]">
+          <h2 className="text-[48px] font-keetanoKB mb-[40px]">
+            Часто задаваемые вопросы
+          </h2>
+          <div className="text-center w-[810px] mb-[50px]">
+            <p className="text-base font-involveBQ">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero
+              volutpat sed cras ornare arcu dui vivamus.
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-wrap items-center justify-between mb-[120px]">
+          <div className="">
+            <div className="w-[500px] mb-[50px]">
+              <h3 className="text-xl mb-[20px]">Где проводятся игры?</h3>
+              <p className="text-base font-involveBQ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Libero volutpat sed cras ornare arcu dui vivamus.
+              </p>
+            </div>
+            <div className="w-[500px]">
+              <h3 className="text-xl mb-[20px]">Будут ли бонусы за друзей?</h3>
+              <p className="text-base font-involveBQ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Libero volutpat sed cras ornare arcu dui vivamus.
+              </p>
+            </div>
+          </div>
+          <div className="">
+            <div className="w-[500px] mb-[50px]">
+              <h3 className="text-xl mb-[20px]">Сколько стоит сессия?</h3>
+              <p className="text-base font-involveBQ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Libero volutpat sed cras ornare arcu dui vivamus.
+              </p>
+            </div>
+            <div className="w-[500px]">
+              <h3 className="text-xl mb-[20px]">Могу ли я стать ведущим?</h3>
+              <p className="text-base font-involveBQ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Libero volutpat sed cras ornare arcu dui vivamus.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
