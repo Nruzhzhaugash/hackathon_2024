@@ -13,18 +13,17 @@ export default function Layout({ children, type }: LayoutProps) {
       {type === "login" && (
         <>
           <Header />
-            {children}
+          {children}
           <Footer />
         </>
       )}
       {type === "profile" && (
         <>
           <Header />
-            {children}
+          {children}
           <Footer />
         </>
       )}
     </main>
   );
 }
-

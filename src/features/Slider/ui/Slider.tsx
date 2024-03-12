@@ -31,7 +31,7 @@ export default function Slider() {
               alt="background"
             />
           </div>
-          <div className="relative flex flex-col mt-[260px] items-center justify-center z-10 text-center text-link">
+          <div className="relative flex flex-col mt-[260px] items-center justify-center text-center text-link">
             <h1 className="text-2xl font-bold font-keetanoKB mb-4">
               {item.title}
             </h1>

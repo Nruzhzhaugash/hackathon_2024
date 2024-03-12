@@ -17,7 +17,9 @@ const Articles: React.FC<ArticleFeedProps> = ({ articles }) => {
   return (
     <div className="mb-[120px]">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl text-primary mb-[20px]">Статьи</h2>
+        <h2 className="text-2xl text-primary mb-[20px] font-keetanoKB">
+          Статьи
+        </h2>
         <div className="flex items-center">
           <div className="flex items-center mr-[40px]">
             <div className="bg-green rounded-full w-5 h-5 mr-[3px]"></div>

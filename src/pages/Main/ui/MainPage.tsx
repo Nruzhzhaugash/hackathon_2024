@@ -45,11 +45,11 @@ const articleData = [
 export const MainPage = () => {
   return (
     <section>
-      <div className="mt-[60px] mb-[100px] relative h-[700px] w-[1295px] flex items-center justify-center">
+      <div className="mt-[60px] mb-[120px] relative h-[700px] w-[1295px] flex items-center justify-center">
         <Slider />
       </div>
-      <div className="my-[100px]">
-        <h2 className="text-2xl mb-[82px]">
+      <div className="my-[120px]">
+        <h2 className="text-2xl mb-[80px] font-keetanoKB">
           СОЦИАЛЬНАЯ РОЛЕВАЯ ИГРА «МАФИЯ»: ТАКТИКА И СТРАТЕГИЯ ПО КЛАССИЧЕСКИМ
           ПРАВИЛАМ
         </h2>
@@ -57,7 +57,7 @@ export const MainPage = () => {
           <img src="/main/people3.png" alt="photo" />
           <div className="w-[630px]">
             <h3 className="text-xl mb-[50px]">СЕКРЕТЫ ИГРЫ МАФИЯ</h3>
-            <p className="text-base">
+            <p className="text-base font-involveBQ">
               Правила и суть игры «Мафия» на первый взгляд довольны просты.
               Играющих может быть 10 человек. Ведущий раздает каждому участнику
               по карте и этим определяет их роли в игре «Мафия». 7 красных карт
@@ -73,7 +73,7 @@ export const MainPage = () => {
             <h3 className="text-xl mb-[50px]">
               Интеллектуальная игра «Мафия»: как научиться играть?
             </h3>
-            <p className="text-base">
+            <p className="text-base font-involveBQ">
               Общая стратегия игры в «Мафию» приблизительно одинакова во всех
               разновидностях и основывается на правилах, хотя в последнее время
               появляется все больше аналогов и интересных дополнительных
@@ -87,11 +87,11 @@ export const MainPage = () => {
         </div>
         <div></div>
       </div>
-      <div className="flex items-center justify-between mb-[100px]">
+      <div className="flex items-center justify-between my-[120px]">
         <NewsFeed news={newData} />
         {/* <Raiting /> */}
       </div>
-      <div>
+      <div className="my-[120px]">
         <Articles articles={articleData} />
       </div>
     </section>
