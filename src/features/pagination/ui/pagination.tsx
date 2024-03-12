@@ -3,16 +3,17 @@ import React from 'react'
 interface PaginationProps {
   ratingPerPage: number;
   totalRating: number;
+  currentPage: number;
   paginate: (pageNumber: number) => void;
 }
 
-export default function Pagination({ ratingPerPage, totalRating, paginate }: PaginationProps) {
+export default function Pagination({ ratingPerPage, totalRating, paginate, currentPage }: PaginationProps) {
   const pageNumbers = [];
 
   for(let i = 1; i <= Math.ceil(totalRating / ratingPerPage); i++) pageNumbers.push(i);
 
   return (
-    <div className='mt-[50px]'>
+    <div className='mt-[50px]'> 
       <ul className='flex justify-center items-center tracking-[5px]'>
         {
           pageNumbers.map(number => (
