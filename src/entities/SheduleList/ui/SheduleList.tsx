@@ -1,5 +1,4 @@
 'use client'
-
 import React from 'react';
 import { Table } from 'flowbite-react';
 import Link from 'next/link';

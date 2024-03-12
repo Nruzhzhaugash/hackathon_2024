@@ -1,6 +1,6 @@
 export default function AboutPage() {
   return (
-    <div>
+    <section>
       <div className="mt-[60px] mb-[120px] relative h-[700px] w-[1295px] flex items-center justify-center">
         <div className="absolute inset-0 overflow-hidden">
           <img
@@ -123,6 +123,6 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

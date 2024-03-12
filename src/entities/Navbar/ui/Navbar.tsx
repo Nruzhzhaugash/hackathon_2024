@@ -29,7 +29,7 @@ export default function Navbar() {
         Рейтинг
       </Link>
       <Link
-        href=""
+        href="/presenter-order"
         className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         Магазин

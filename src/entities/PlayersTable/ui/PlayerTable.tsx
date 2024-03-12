@@ -28,6 +28,7 @@ type SortOrder = 'asc' | 'desc';
 
 export default function PlayerTable({ data, currentPage, sortColumn, sortOrder, changeSortCategory }: PlayersTableProps): JSX.Element {
   const [sortedData, setSortedData] = useState<PlayerData[]>([]);
+  const [active, setActive] = useState<boolean>(false);
 
   useEffect(() => {
     const newData = [...data].sort((a, b) => {
@@ -66,7 +67,7 @@ export default function PlayerTable({ data, currentPage, sortColumn, sortOrder, 
           {sortedData.map(({ id, name, points, koff, trophy, games, wins, loses }) => (
             <Table.Row key={id} className='rating__table border-primary'>
               <Table.Cell className='text-[20px] py-5 text-primary font-normal font-involveRG'>{id}</Table.Cell>
-              <Table.Cell className='text-[20px] py-5 text-primary font-normal font-involveRG'>{id = 4000}</Table.Cell>
+              <Table.Cell className='text-[20px] py-5 text-primary font-normal font-involveRG'>{id}</Table.Cell>
               <Table.Cell className='hover:underline text-[20px] py-5 text-primary font-normal font-involveRG'><Link href={''}>{name}</Link></Table.Cell>
               <Table.Cell className='text-[20px] py-5 text-primary font-normal font-involveRG'>{points}</Table.Cell>
               <Table.Cell className='text-[20px] py-5 text-primary font-normal font-involveRG'>{koff}</Table.Cell>
