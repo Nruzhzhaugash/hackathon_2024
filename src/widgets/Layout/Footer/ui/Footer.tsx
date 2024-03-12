@@ -39,8 +39,8 @@ export default function Footer() {
             <Link href={''} className="text-link font-bold text-lg">Новости</Link>
           </div>
           <div className="flex flex-col gap-[21px]">
-            <Link href={''} className="text-link font-bold text-lg">Рейтинг</Link>
-            <Link href={''} className="text-link font-bold text-lg">Расписание</Link>
+            <Link href={'/rating'} className="text-link font-bold text-lg">Рейтинг</Link>
+            <Link href={'/shedule'} className="text-link font-bold text-lg">Расписание</Link>
           </div>
           <div className="flex flex-col gap-[21px]">
             <Link href={''} className="text-link font-bold text-lg">О клубе</Link>
