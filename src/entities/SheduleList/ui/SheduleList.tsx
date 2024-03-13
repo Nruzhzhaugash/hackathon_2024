@@ -33,7 +33,7 @@ export default function SheduleList({ data }: SheduleListProps) {
               <Table.Cell className='text-[20px] py-5 text-primary font-normal font-involveRG'>{time}</Table.Cell>
               <Table.Cell className='text-[20px] py-5 text-primary font-normal font-involveRG'>{address}</Table.Cell>
               <Table.Cell className='text-[20px] py-5 text-primary font-bold font-involveRG'>
-                <Link className='hover:underline duration-200 transition-all' href={''}>{record}</Link>
+                <Link className='hover:underline duration-200 transition-all' href={'/shedule/record'}>{record}</Link>
               </Table.Cell>
             </Table.Row>
           ))}

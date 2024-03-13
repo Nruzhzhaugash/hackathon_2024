@@ -32,7 +32,7 @@ export default function Navbar() {
         href="/presenter-order"
         className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
-        Магазин
+        Заказ ведущего
       </Link>
     </nav>
   );
