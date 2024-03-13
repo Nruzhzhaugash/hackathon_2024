@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.1",
+    "@userfront/react": "^0.3.4",
     "axios": "^1.6.7",
     "classnames": "^2.5.1",
     "flowbite-react": "^0.7.2",

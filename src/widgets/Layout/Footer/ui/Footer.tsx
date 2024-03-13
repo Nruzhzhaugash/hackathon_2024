@@ -19,7 +19,7 @@ export default function Footer() {
             Электронная почта:
           </h3>
           <form className="mb-[25px] flex items-center gap-2.5">
-            <div className="px-[50px] py-[11px] bg-link">
+            <div className="px-[50px] py-[7px] bg-link">
               <Input
                 placeholder="Введите свою почту"
                 type="email"
@@ -49,12 +49,8 @@ export default function Footer() {
             </Link>
           </div>
           <div className="flex flex-col gap-[21px]">
-            <Link href={""} className="text-link font-bold text-lg">
-              Рейтинг
-            </Link>
-            <Link href={""} className="text-link font-bold text-lg">
-              Расписание
-            </Link>
+            <Link href={'/rating'} className="text-link font-bold text-lg">Рейтинг</Link>
+            <Link href={'/shedule'} className="text-link font-bold text-lg">Расписание</Link>
           </div>
           <div className="flex flex-col gap-[21px]">
             <Link href={""} className="text-link font-bold text-lg">

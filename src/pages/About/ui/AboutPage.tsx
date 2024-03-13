@@ -11,7 +11,7 @@ export default function AboutPage() {
         </div>
         <div className="relative flex flex-col mt-[260px] items-center justify-center text-center text-link">
           <h1 className="text-xl mb-[50px]">
-            Добро пожаловать в клуб мафии “SHOWTIME"!
+            Добро пожаловать в клуб мафии `SHOWTIME`!
           </h1>
           <div className="text-center w-[770px] mb-[240px]">
             <p className="text-base font-involveRG">
@@ -34,7 +34,7 @@ export default function AboutPage() {
             <h3 className="text-xl  mb-[50px]">КЛУБ SHOWTIME</h3>
             <p className="text-base font-involveBQ">
               Это уютное пространство, где каждый может окунуться в
-              захватывающий мир игры "Мафия". Мы гордимся своим многолетним
+              захватывающий мир игры `Мафия`. Мы гордимся своим многолетним
               опытом в проведении игровых вечеров и мероприятий, организованных
               для наших участников.
             </p>
