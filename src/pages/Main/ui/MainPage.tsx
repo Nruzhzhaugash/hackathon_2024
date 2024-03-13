@@ -1,8 +1,12 @@
+'use client'
 import Button from "@/shared/ui/Button/Button";
 import NewsFeed from "@/features/news/ui/News";
 // import Raiting from "@/features/raiting/ui/Raiting";
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import Articles from "@/features/articles/ui/Articles";
 import Slider from "@/features/Slider/ui/Slider";
+import MImage from "@/shared/ui/Image/Image";
 
 const newData = [
   {
@@ -42,22 +46,74 @@ const articleData = [
   },
 ];
 
+const textAnimation = {
+  hidden: {
+    x: 100,
+    opacity: 0,
+  },
+  visible: (custom: number) =>  ({
+    x: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.7, damping: 10, stiffness: 100, mass: 0.5 }
+  })
+}
+
+const textAnimation2 = {
+  hidden: {
+    x: -100,
+    opacity: 0,
+  },
+  visible: (custom: number) => ({
+    x: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.7, damping: 10, stiffness: 100, mass: 0.5 },
+  })
+}
+
+const textAnimation3 = {
+  hidden: {
+    y: 100,
+    opacity: 0
+  },
+  visible: (custom: number) => ({
+    y: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.7, damping: 10, stiffness: 100, mass: 0.5 },
+  })
+}
+
 export const MainPage = () => {
+  const [ref, inView] = useInView({ threshold: 0.1 });
+
   return (
-    <section>
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      animate={inView ? "visible" : "hidden"}
+      viewport={{ once: false }}
+      ref={ref}
+    >
       <div className="mt-[60px] mb-[120px] relative h-[700px] w-[1295px] flex items-center justify-center">
         <Slider />
       </div>
-      <div className="my-[120px]">
-        <h2 className="text-2xl mb-[80px] font-keetanoKB">
+      <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 0.2, once: true }} className="my-[120px]">
+        <motion.h2 variants={textAnimation2} custom={0.8} className="text-2xl mb-[80px] font-keetanoKB">
           СОЦИАЛЬНАЯ РОЛЕВАЯ ИГРА «МАФИЯ»: ТАКТИКА И СТРАТЕГИЯ ПО КЛАССИЧЕСКИМ
           ПРАВИЛАМ
-        </h2>
-        <div className="flex items-center justify-between mb-[70px]">
-          <img src="/main/people3.png" alt="photo" />
+        </motion.h2>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 0.2, once: true }} className="flex items-center justify-between mb-[70px]">
+          <MImage 
+            variants={textAnimation2}
+            initial="hidden"
+            whileInView="visible"
+            custom={1.5}
+            viewport={{ amount: 0.2, once: true }}
+            src="/main/people3.png" 
+            alt="photo"
+          />
           <div className="w-[630px]">
-            <h3 className="text-xl mb-[50px]">СЕКРЕТЫ ИГРЫ МАФИЯ</h3>
-            <p className="text-base font-involveBQ">
+            <motion.h3 variants={textAnimation} custom={1} className="text-xl mb-[50px]">СЕКРЕТЫ ИГРЫ МАФИЯ</motion.h3>
+            <motion.p variants={textAnimation} custom={2} className="text-base font-involveBQ">
               Правила и суть игры «Мафия» на первый взгляд довольны просты.
               Играющих может быть 10 человек. Ведущий раздает каждому участнику
               по карте и этим определяет их роли в игре «Мафия». 7 красных карт
@@ -65,15 +121,15 @@ export const MainPage = () => {
               Один из них – Шериф, возглавляющий всю команду. Те, кто получает
               черные карты, становятся группой мафиози, предводителем которой
               является Дон...
-            </p>
+            </motion.p>
           </div>
-        </div>
-        <div className="flex items-center justify-between">
+        </motion.div>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 0.2, once: true }} className="flex items-center justify-between">
           <div className="w-[630px]">
-            <h3 className="text-xl mb-[50px]">
+            <motion.h3 variants={textAnimation2} custom={1} className="text-xl mb-[50px]">
               Интеллектуальная игра «Мафия»: как научиться играть?
-            </h3>
-            <p className="text-base font-involveBQ">
+            </motion.h3>
+            <motion.p variants={textAnimation2} custom={2} className="text-base font-involveBQ">
               Общая стратегия игры в «Мафию» приблизительно одинакова во всех
               разновидностях и основывается на правилах, хотя в последнее время
               появляется все больше аналогов и интересных дополнительных
@@ -81,19 +137,27 @@ export const MainPage = () => {
               индивидуальные приемы: тактика и секреты игры в классическую Мафию
               разрабатываются в зависимости от собственного опыта. Ведь недаром
               считается, что это — психологическая игра...
-            </p>
+            </motion.p>
           </div>
-          <img src="/main/people2.png" alt="photo" />
-        </div>
+          <MImage 
+            variants={textAnimation}
+            initial="hidden"
+            whileInView="visible"
+            custom={1.5}
+            viewport={{ amount: 0.2, once: true }}
+            src="/main/people2.png" 
+            alt="photo"
+          />
+        </motion.div>
         <div></div>
-      </div>
-      <div className="flex items-center justify-between my-[120px]">
+      </motion.div>
+      <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 0.2, once: true }} className="flex items-center justify-between my-[120px]">
         <NewsFeed news={newData} />
         {/* <Raiting /> */}
-      </div>
-      <div className="my-[120px]">
+      </motion.div>
+      <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 0.2, once: true }} className="my-[120px]">
         <Articles articles={articleData} />
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
