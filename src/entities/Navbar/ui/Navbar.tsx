@@ -9,7 +9,7 @@ export default function Navbar() {
   console.log(session);
 
   return (
-    <nav className="flex items-center gap-11">
+    <nav className="mmd:hidden flex items-center gap-11">
       <Link
         href="/about"
         className="hover:text-opacity-80 whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"

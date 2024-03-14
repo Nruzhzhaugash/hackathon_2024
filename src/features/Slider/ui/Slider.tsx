@@ -21,7 +21,7 @@ const sliderData = [
 
 export default function Slider() {
   return (
-    <Carousel slideInterval={5000} leftControl=" " rightControl=" ">
+    <Carousel slideInterval={5000} leftControl=" " rightControl=" " className="mmd:hidden">
       {sliderData.map((item) => (
         <div key={item.id}>
           <div className="absolute inset-0 overflow-hidden">

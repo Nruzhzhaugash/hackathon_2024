@@ -11,3 +11,14 @@
     height: 696px;
   }
 }
+
+@media (max-width: 785px) {
+
+  .presenter__order {
+
+
+    &__bg {
+      display: none;
+    }
+  }
+}

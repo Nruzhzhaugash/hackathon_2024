@@ -70,18 +70,6 @@ const textAnimation2 = {
   })
 }
 
-const textAnimation3 = {
-  hidden: {
-    y: 100,
-    opacity: 0
-  },
-  visible: (custom: number) => ({
-    y: 0,
-    opacity: 1,
-    transition: { delay: custom * 0.7, damping: 10, stiffness: 100, mass: 0.5 },
-  })
-}
-
 export default function MainPage() {
   const [ref, inView] = useInView({ threshold: 0.1 });
 
@@ -93,11 +81,11 @@ export default function MainPage() {
       viewport={{ once: false }}
       ref={ref}
     >
-      <div className="mt-[60px] mb-[120px] relative h-[700px] w-[1295px] flex items-center justify-center">
+      <div className="mmd:hidden mt-[60px] mb-[120px] relative h-[700px] w-[1295px] flex items-center justify-center">
         <Slider />
       </div>
       <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 0.2, once: true }} className="my-[120px]">
-        <motion.h2 variants={textAnimation2} custom={0.8} className="text-2xl mb-[80px] font-keetanoKB">
+        <motion.h2 variants={textAnimation2} custom={0.8} className="mmd:text-[16px] text-2xl mb-[80px] font-keetanoKB">
           СОЦИАЛЬНАЯ РОЛЕВАЯ ИГРА «МАФИЯ»: ТАКТИКА И СТРАТЕГИЯ ПО КЛАССИЧЕСКИМ
           ПРАВИЛАМ
         </motion.h2>
@@ -106,14 +94,15 @@ export default function MainPage() {
             variants={textAnimation2}
             initial="hidden"
             whileInView="visible"
+            className="mmd:w-[164px] "
             custom={1.5}
             viewport={{ amount: 0.2, once: true }}
             src="/main/people3.png" 
             alt="photo"
           />
           <div className="w-[630px]">
-            <motion.h3 variants={textAnimation} custom={1} className="text-xl mb-[50px]">СЕКРЕТЫ ИГРЫ МАФИЯ</motion.h3>
-            <motion.p variants={textAnimation} custom={2} className="text-base font-involveBQ">
+            <motion.h3 variants={textAnimation} custom={1} className="text-xl mb-[50px] mmd:text-[12px]">СЕКРЕТЫ ИГРЫ МАФИЯ</motion.h3>
+            <motion.p variants={textAnimation} custom={2} className="mmd:text-[7px] text-base font-involveBQ">
               Правила и суть игры «Мафия» на первый взгляд довольны просты.
               Играющих может быть 10 человек. Ведущий раздает каждому участнику
               по карте и этим определяет их роли в игре «Мафия». 7 красных карт
@@ -126,7 +115,7 @@ export default function MainPage() {
         </motion.div>
         <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 0.2, once: true }} className="flex items-center justify-between">
           <div className="w-[630px]">
-            <motion.h3 variants={textAnimation2} custom={1} className="text-xl mb-[50px]">
+            <motion.h3 variants={textAnimation2} custom={1} className="mmd:text-[12px] text-xl mb-[50px]">
               Интеллектуальная игра «Мафия»: как научиться играть?
             </motion.h3>
             <motion.p variants={textAnimation2} custom={2} className="text-base font-involveBQ">

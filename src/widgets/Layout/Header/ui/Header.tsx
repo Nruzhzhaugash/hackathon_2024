@@ -7,25 +7,33 @@ import Button from "@/shared/ui/Button/Button";
 import Logo from "@/shared/ui/icons/header/logo";
 
 import { useSession, signIn, signOut } from "next-auth/react";
+import LogoHeader from "@/shared/ui/icons/header/logoHeader";
+import Burger from "@/features/burger/ui/burger";
 
 interface HeaderProps {
   children?: ReactNode;
+  onClick?: any;
   type?: "login" | "profile";
 }
 
-// const data = [{ id: 1 }];
-
-export default function Header({ children, type }: HeaderProps) {
+export default function Header({ children, type, onClick }: HeaderProps) {
   const session = useSession();
   console.log(session);
   return (
     <header className="bg-primary py-[21px]">
       <div className="flex items-center justify-between container">
-        <Link href="/" className="logo">
+        <Link href="/" className="logo mmd:hidden">
           <Logo />
         </Link>
+        <Link 
+          href={'/'}
+          className="logo md:hidden"
+        >
+          <LogoHeader />
+        </Link>
+        <Burger onClick={onClick} />
         <Navbar />
-        <div className="flex items-center justify-center gap-[53px]">
+        <div className="mmd:hidden flex items-center justify-center gap-[53px]">
           {session?.data ? (
             <Link href={`/profile`}>
               <Button

@@ -4,6 +4,7 @@ export default function Twiiter() {
   return (
     <Link className="hover:text-opacity-70 transition-all" href="https://twitter.com/?lang=en">
       <svg
+        className="mmd:w-[35px] mmd:h-[35px]"
         xmlns="http://www.w3.org/2000/svg"
         width="54"
         height="54"

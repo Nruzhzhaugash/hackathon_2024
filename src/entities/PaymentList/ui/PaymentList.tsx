@@ -2,7 +2,7 @@
 import MButton from '@/shared/ui/Button/Button';
 import { Table } from 'flowbite-react';
 import './styles.scss'
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 
 type PaymentData = {
   id: number;
@@ -18,12 +18,16 @@ interface PaymentListProps {
 export default function PaymentList({ data }: PaymentListProps) {
   const [quantityMap, setQuantityMap] = useState<{ [key: number]: number }>({});
 
-  const handleQuantityChange = useCallback((id: number, delta: number) => {
-    setQuantityMap(prevState => ({
-      ...prevState,
-      [id]: (prevState[id] || 0) + delta,
-    }));
-  }, []);
+  const handleQuantityChange = (id: number, delta: number) => {
+    if (quantityMap[id] === 0 && delta == -1) {
+      return 0
+    } else {
+      setQuantityMap(prevState => ({
+        ...prevState,
+        [id]: (prevState[id] || 0) + delta,
+      }));
+    }
+  };
 
   const calculateTotalPrice = () => {
     let totalPrice = 0;
