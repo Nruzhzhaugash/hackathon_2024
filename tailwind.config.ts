@@ -43,7 +43,7 @@ const config: Config = {
         involveBQ: ["var(--font-involveBQ)"],
       },
       customBorderColor: {
-        DEFAULT: "color(brown)",
+        brown: "color(brown)",
       },
     },
   },

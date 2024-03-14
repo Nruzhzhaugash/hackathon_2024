@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import cn from "classnames";
+import { Providers } from "./Provider/Providers";
 import "./styles/globals.css";
 
 const keetano = localFont({
@@ -63,7 +64,7 @@ export default function RootLayout({
           "bg-link"
         )}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

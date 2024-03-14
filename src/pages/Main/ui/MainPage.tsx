@@ -42,7 +42,7 @@ const articleData = [
   },
 ];
 
-export const MainPage = () => {
+export default function MainPage() {
   return (
     <section>
       <div className="mt-[60px] mb-[120px] relative h-[700px] w-[1295px] flex items-center justify-center">
@@ -96,4 +96,4 @@ export const MainPage = () => {
       </div>
     </section>
   );
-};
+}
