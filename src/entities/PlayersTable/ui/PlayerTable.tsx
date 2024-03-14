@@ -23,6 +23,7 @@ interface PlayersTableProps {
   sortColumn: keyof PlayerData;
   sortOrder: SortOrder;
   changeSortCategory: (columnName: keyof PlayerData) => void;
+  searchTerm: string
 }
 
 type SortOrder = "asc" | "desc";
@@ -32,10 +33,10 @@ export default function PlayerTable({
   currentPage,
   sortColumn,
   sortOrder,
+  searchTerm,
   changeSortCategory,
 }: PlayersTableProps): JSX.Element {
   const [sortedData, setSortedData] = useState<PlayerData[]>([]);
-  const [active, setActive] = useState<boolean>(false);
 
   useEffect(() => {
     const newData = [...data].sort((a, b) => {
@@ -49,8 +50,9 @@ export default function PlayerTable({
   }, [data, sortColumn, sortOrder]);
 
   useEffect(() => {
-    setSortedData(data);
-  }, [data]);
+    const filteredData = data.filter(player => player.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    setSortedData(filteredData);
+  }, [data, searchTerm]);
 
   const handleSort = (columnName: keyof PlayerData) => {
     changeSortCategory(columnName);

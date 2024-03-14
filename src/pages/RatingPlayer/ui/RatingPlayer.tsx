@@ -1,7 +1,9 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PlayerTable from "@/entities/PlayersTable/ui/PlayerTable";
 import Pagination from "@/features/pagination/ui/pagination";
+import ModalOpen from "@/features/Modal/ui/Modal";
+import Input from "@/shared/ui/Input/Input";
 
 const initialData = [
   {
@@ -120,10 +122,13 @@ type SortOrder = "asc" | "desc";
 
 export default function RatingPage() {
   const [ratingPerPage] = useState(10);
+  const [openModal, setOpenModal] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [data] = useState(initialData); 
   const [sortColumn, setSortColumn] = useState<any>('points');
   const [sortOrder, setSortOrder] = useState<SortOrder>('asc');
+  const [selectedCity, setSelectedCity] = useState<string>('Алмата');
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
   const sortedData = [...data].sort((a, b) => {
     if (sortColumn === "name") {
@@ -133,11 +138,17 @@ export default function RatingPage() {
     }
   });
 
+  const handleSelectCity = (city: string) => {
+    setSelectedCity(city);
+  };
+
+  
   const lastRatingIndex = currentPage * ratingPerPage;
   const firstRatingIndex = lastRatingIndex - ratingPerPage;
   const currentRating = sortedData.slice(firstRatingIndex, lastRatingIndex);
-
+  
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const handleSearch = (searchTerm: string) => setSearchTerm(searchTerm);
 
   const changeSortCategory = (columnName: keyof PlayerData) => {
     if (sortColumn === columnName) {
@@ -148,6 +159,10 @@ export default function RatingPage() {
     }
   };
 
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [searchTerm])
+
   const overallRating = () => {
     setSortColumn('points');
     setSortOrder('asc');
@@ -155,11 +170,24 @@ export default function RatingPage() {
 
   return (
     <section className="rating">
-      <div className="flex gap-[60px] mb-[50px]">
-        <h1 onClick={() => overallRating()} className="text-[20px] font-involveRG font-semibold text-primary">Общий рейтинг</h1>
+      <div className="flex items-center justify-between mb-[50px]">
+      <h1 className="text-primary text-2xl font-bold">Рейтинг игроков</h1>
+      <div className="border-primary border-[1px] border-solid p-2.5">
+        <Input 
+          className="font-involveRG font-normal text-[16px] text-brown w-[296px]"
+          placeholder="Для поиска введите никнейм игрока"
+          value={searchTerm}
+          onChange={(e) => handleSearch(e.target.value)}
+        />
       </div>
+      </div>
+      <li className="flex gap-[60px] mb-[50px]">
+        <ul onClick={() => overallRating()} className="cursor-pointer text-[20px] font-involveRG font-semibold text-primary">Общий рейтинг</ul>
+        <ul onClick={() => setOpenModal(true)} className="cursor-pointer text-[20px] font-involveRG font-semibold text-primary">{selectedCity || 'Выберите город'}</ul>
+      </li>
       <PlayerTable 
         data={currentRating}
+        searchTerm={searchTerm} 
         currentPage={currentPage}
         sortColumn={sortColumn}
         sortOrder={sortOrder}
@@ -170,6 +198,11 @@ export default function RatingPage() {
         totalRating={sortedData.length}
         paginate={paginate}
         currentPage={currentPage}
+      />
+      <ModalOpen 
+        active={openModal}
+        setActive={setOpenModal}
+        onSelectCity={handleSelectCity}
       />
     </section>
   );

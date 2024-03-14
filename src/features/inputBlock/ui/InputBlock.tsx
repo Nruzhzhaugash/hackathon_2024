@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 const InputBlock: React.FC = ({ handleRegister }) => {
     const [username, setUsername] = React.useState("");
     const [lastname, setLastname] = React.useState("");
