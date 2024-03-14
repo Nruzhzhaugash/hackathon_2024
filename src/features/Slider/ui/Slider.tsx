@@ -26,7 +26,7 @@ export default function Slider() {
         <div key={item.id}>
           <div className="absolute inset-0 overflow-hidden">
             <img
-              className="w-full h-full object-cover"
+              className="w-full h-full object-covebr"
               src={item.imgUrl}
               alt="background"
             />

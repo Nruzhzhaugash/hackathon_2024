@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { Table } from "flowbite-react";
 import './styles.scss';
 import Link from 'next/link';
@@ -15,35 +15,41 @@ type PlayerData = {
   games: number;
   wins: number;
   loses: number;
-}
+};
 
 interface PlayersTableProps {
   data: PlayerData[];
   currentPage: number;
   sortColumn: keyof PlayerData;
-  sortOrder: SortOrder; 
-  changeSortCategory: (columnName: keyof PlayerData) => void; 
+  sortOrder: SortOrder;
+  changeSortCategory: (columnName: keyof PlayerData) => void;
 }
 
-type SortOrder = 'asc' | 'desc';
+type SortOrder = "asc" | "desc";
 
-export default function PlayerTable({ data, currentPage, sortColumn, sortOrder, changeSortCategory }: PlayersTableProps): JSX.Element {
+export default function PlayerTable({
+  data,
+  currentPage,
+  sortColumn,
+  sortOrder,
+  changeSortCategory,
+}: PlayersTableProps): JSX.Element {
   const [sortedData, setSortedData] = useState<PlayerData[]>([]);
   const [active, setActive] = useState<boolean>(false);
 
   useEffect(() => {
     const newData = [...data].sort((a, b) => {
-      if (sortColumn === 'name') {
-        return a.name.localeCompare(b.name) * (sortOrder === 'asc' ? 1 : -1);
+      if (sortColumn === "name") {
+        return a.name.localeCompare(b.name) * (sortOrder === "asc" ? 1 : -1);
       } else {
-        return (b[sortColumn] - a[sortColumn]) * (sortOrder === 'asc' ? 1 : -1);
+        return (b[sortColumn] - a[sortColumn]) * (sortOrder === "asc" ? 1 : -1);
       }
     });
     setSortedData(newData);
   }, [data, sortColumn, sortOrder]);
 
   useEffect(() => {
-    setSortedData(data); 
+    setSortedData(data);
   }, [data]);
 
   const handleSort = (columnName: keyof PlayerData) => {
@@ -81,6 +87,5 @@ export default function PlayerTable({ data, currentPage, sortColumn, sortOrder, 
         </Table.Body>
       </Table>
     </div>
-  )
+  );
 }
-

@@ -82,7 +82,7 @@ const textAnimation3 = {
   })
 }
 
-export const MainPage = () => {
+export default function MainPage() {
   const [ref, inView] = useInView({ threshold: 0.1 });
 
   return (
@@ -160,4 +160,4 @@ export const MainPage = () => {
       </motion.div>
     </motion.section>
   );
-};
+}

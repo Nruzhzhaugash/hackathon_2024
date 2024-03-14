@@ -1,11 +1,11 @@
-import MainPage from "@/pages/Main/ui/MainPage";
+import RegistrationPage from "@/pages/Registration/ui/RegistrationPage";
 import Layout from "@/widgets/Layout/Layout";
 
-export default function Home() {
+export default function Registration() {
   return (
     <Layout type="login">
       <main className="container">
-        <MainPage />
+        <RegistrationPage />
       </main>
     </Layout>
   );

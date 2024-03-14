@@ -42,6 +42,9 @@ const config: Config = {
         involveRG: ["var(--font-involveRG)"],
         involveBQ: ["var(--font-involveBQ)"],
       },
+      customBorderColor: {
+        brown: "color(brown)",
+      },
     },
   },
   plugins: [require("flowbite/plugin")],

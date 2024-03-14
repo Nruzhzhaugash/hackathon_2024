@@ -1,11 +1,11 @@
-import MainPage from "@/pages/Main/ui/MainPage";
+import NewsPage from "@/pages/News/ui/NewsPage";
 import Layout from "@/widgets/Layout/Layout";
 
-export default function Home() {
+export default function News() {
   return (
     <Layout type="login">
       <main className="container">
-        <MainPage />
+        <NewsPage />
       </main>
     </Layout>
   );
