@@ -38,35 +38,35 @@ export default function Footer() {
         </div>
         <div className="right pt-5 flex gap-[51px]">
           <div className="flex flex-col gap-[21px]">
-            <Link href={"/"} className="text-link font-bold text-lg">
+            <Link href={"/"} className="hover:text-opacity-70 transition-all text-link font-bold text-lg">
               Главная
             </Link>
-            <Link href={""} className="text-link font-bold text-lg">
+            <Link href={""} className="hover:text-opacity-70 transition-all text-link font-bold text-lg">
               Статьи
             </Link>
-            <Link href={""} className="text-link font-bold text-lg">
+            <Link href={""} className="hover:text-opacity-70 transition-all text-link font-bold text-lg">
               Новости
             </Link>
           </div>
           <div className="flex flex-col gap-[21px]">
-            <Link href={'/rating'} className="text-link font-bold text-lg">Рейтинг</Link>
-            <Link href={'/shedule'} className="text-link font-bold text-lg">Расписание</Link>
+            <Link href={'/rating'} className="hover:text-opacity-70 transition-all text-link font-bold text-lg">Рейтинг</Link>
+            <Link href={'/shedule'} className="hover:text-opacity-70 transition-all text-link font-bold text-lg">Расписание</Link>
           </div>
           <div className="flex flex-col gap-[21px]">
-            <Link href={""} className="text-link font-bold text-lg">
+            <Link href={"/about"} className="hover:text-opacity-70 transition-all text-link font-bold text-lg">
               О клубе
             </Link>
-            <Link href={""} className="text-link font-bold text-lg">
+            <Link href={""} className="hover:text-opacity-70 transition-all text-link font-bold text-lg">
               Галерея
             </Link>
-            <Link href={""} className="text-link font-bold text-lg">
+            <Link href={""} className="hover:text-opacity-70 transition-all text-link font-bold text-lg">
               Партнёры
             </Link>
           </div>
           <div className="flex">
             <Link
-              href={""}
-              className="whitespace-nowrap text-link font-bold text-lg"
+              href={"/presenter-order"}
+              className="hover:text-opacity-70 transition-all whitespace-nowrap text-link font-bold text-lg"
             >
               Заказать ведущего
             </Link>

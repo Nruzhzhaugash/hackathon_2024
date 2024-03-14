@@ -49,8 +49,16 @@ export default function RatingPage() {
     }
   };
 
+  const overallRating = () => {
+    setSortColumn('points');
+    setSortOrder('asc');
+  }
+
   return (
     <section className="rating">
+      <div className="flex gap-[60px] mb-[50px]">
+        <h1 onClick={() => overallRating()} className="text-[20px] font-involveRG font-semibold text-primary">Общий рейтинг</h1>
+      </div>
       <PlayerTable 
         data={currentRating}
         currentPage={currentPage}

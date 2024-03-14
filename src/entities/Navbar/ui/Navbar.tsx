@@ -6,31 +6,31 @@ export default function Navbar() {
     <nav className="flex items-center gap-11">
       <Link
         href="/about"
-        className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
+        className="hover:text-opacity-80 whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         О клубе
       </Link>
       <Link
         href="/shedule"
-        className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
+        className="hover:text-opacity-80 transition-all whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         Расписание
       </Link>
       <Link
         href=""
-        className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
+        className="hover:text-opacity-80 whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         Новости
       </Link>
       <Link
         href="/rating"
-        className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
+        className="hover:text-opacity-80 whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         Рейтинг
       </Link>
       <Link
         href="/presenter-order"
-        className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
+        className="hover:text-opacity-80 whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         Заказ ведущего
       </Link>

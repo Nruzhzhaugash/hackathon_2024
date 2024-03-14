@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Table } from "flowbite-react";
 import './styles.scss';
 import Link from 'next/link';
+import Arrow from '@/shared/ui/icons/rating/arrow';
 
 type PlayerData = {
   id: number;
@@ -52,15 +53,15 @@ export default function PlayerTable({ data, currentPage, sortColumn, sortOrder, 
   return (
     <div className='overflow-x-auto'>
       <Table className='bg-transaprent'>
-        <Table.Head className='bg-transparent rating__table border-primary'>
+        <Table.Head className=' bg-transparent rating__table border-primary'>
           <Table.HeadCell className='pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary'>№</Table.HeadCell>
           <Table.HeadCell className='pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary'>ID</Table.HeadCell>
           <Table.HeadCell className='pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary'>Имя игрока</Table.HeadCell>
-          <Table.HeadCell className='hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary' onClick={() => handleSort('points')}>Очки</Table.HeadCell>
-          <Table.HeadCell className='hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary' onClick={() => handleSort('koff')}>Коэфф.</Table.HeadCell>
-          <Table.HeadCell className='hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary' onClick={() => handleSort('trophy')}>Трофеи</Table.HeadCell>
-          <Table.HeadCell className='hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary' onClick={() => handleSort('games')}>Игры</Table.HeadCell>
-          <Table.HeadCell className='hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary' onClick={() => handleSort('wins')}>Победы</Table.HeadCell>
+          <Table.HeadCell className='hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary flex ' onClick={() => handleSort('points')}>Очки {sortColumn === 'points' && <Arrow direction={sortOrder} />}</Table.HeadCell>
+          <Table.HeadCell className='hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary' onClick={() => handleSort('koff')}>Коэфф. {sortColumn === 'koff' && <Arrow direction={sortOrder} />}</Table.HeadCell>
+          <Table.HeadCell className='hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary flex' onClick={() => handleSort('trophy')}>Трофеи {sortColumn === 'trophy' && <Arrow direction={sortOrder} />}</Table.HeadCell>
+          <Table.HeadCell className='hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary' onClick={() => handleSort('games')}>Игры {sortColumn === 'games' && <Arrow direction={sortOrder} />}</Table.HeadCell>
+          <Table.HeadCell className='hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary flex' onClick={() => handleSort('wins')}>Победы {sortColumn === 'wins' && <Arrow direction={sortOrder} />}</Table.HeadCell>
           <Table.HeadCell className='pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary'>Поражения</Table.HeadCell>
         </Table.Head>
         <Table.Body>
