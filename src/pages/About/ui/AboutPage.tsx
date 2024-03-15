@@ -1,6 +1,55 @@
+'use client'
+import MImage from '@/shared/ui/Image/Image';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+const textAnimation = {
+  hidden: {
+    x: 100,
+    opacity: 0,
+  },
+  visible: (custom: number) =>  ({
+    x: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.7, damping: 10, stiffness: 100, mass: 0.5 }
+  })
+}
+
+const textAnimation2 = {
+  hidden: {
+    x: -100,
+    opacity: 0,
+  },
+  visible: (custom: number) => ({
+    x: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.7, damping: 10, stiffness: 100, mass: 0.5 },
+  })
+}
+
+const textAnimation3 = {
+  hidden: {
+    y: 100,
+    opacity: 0
+  },
+  visible: (custom: number) => ({
+    y: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.7, damping: 10, stiffness: 100, mass: 0.5 },
+  })
+}
+
 export default function AboutPage() {
+  const [ref, inView] = useInView({ threshold: 0.1 });
+
   return (
-    <div>
+    <motion.section 
+      initial="hidden" 
+      whileInView="visible"
+      animate={inView ? "visible" : "hidden"}
+      viewport={{ once: false }}
+      ref={ref}
+    >
       <div className="mt-[60px] mb-[120px] relative h-[700px] w-[1295px] flex items-center justify-center">
         <div className="absolute inset-0 overflow-hidden">
           <img
@@ -24,28 +73,36 @@ export default function AboutPage() {
         </div>
       </div>
       <div className="my-[120px] text-primary">
-        <h2 className="text-[48px] mb-[80px] font-keetanoKB">
+        <motion.h2 initial="hidden" whileInView="visible" viewport={{ amount: 0.2, once: true }} custom={0.2} variants={textAnimation2} className="text-[48px] mb-[80px] font-keetanoKB">
           СОЦИАЛЬНАЯ РОЛЕВАЯ ИГРА «МАФИЯ»: ТАКТИКА И СТРАТЕГИЯ ПО КЛАССИЧЕСКИМ
           ПРАВИЛАМ
-        </h2>
+        </motion.h2>
         <div className="flex  justify-between mb-[80px]">
-          <img src="/about/people2.png" alt="photo" />
-          <div className="w-[630px]">
-            <h3 className="text-xl  mb-[50px]">КЛУБ SHOWTIME</h3>
-            <p className="text-base font-involveBQ">
+          <MImage
+            variants={textAnimation2}
+            custom={1.5}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.2, once: true }}
+            src="/about/people2.png"
+            alt="photo"
+          />
+          <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 0.2, once: true }} className="w-[630px]">
+            <motion.h3 variants={textAnimation} custom={1} className="text-xl  mb-[50px]">КЛУБ SHOWTIME</motion.h3>
+            <motion.p variants={textAnimation} custom={2} className="text-base font-involveBQ">
               Это уютное пространство, где каждый может окунуться в
               захватывающий мир игры `Мафия`. Мы гордимся своим многолетним
               опытом в проведении игровых вечеров и мероприятий, организованных
               для наших участников.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
-        <div className="flex justify-between mb-[80px]">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 0.2, once: true }} className="flex justify-between mb-[80px]">
           <div className="w-[630px]">
-            <h3 className="text-xl mb-[50px]">
+            <motion.h3 variants={textAnimation2} custom={1} className="text-xl mb-[50px]">
               Что делает наш клуб особенным?
-            </h3>
-            <p className="text-base font-involveBQ">
+            </motion.h3>
+            <motion.p variants={textAnimation2} custom={2} className="text-base font-involveBQ">
               Общая стратегия игры в «Мафию» приблизительно одинакова во всех
               разновидностях и основывается на правилах, хотя в последнее время
               появляется все больше аналогов и интересных дополнительных
@@ -53,76 +110,92 @@ export default function AboutPage() {
               индивидуальные приемы: тактика и секреты игры в классическую Мафию
               разрабатываются в зависимости от собственного опыта. Ведь недаром
               считается, что это — психологическая игра...
-            </p>
+            </motion.p>
           </div>
-          <img src="/about/people3.png" alt="photo" />
-        </div>
-        <div className="flex  justify-between mb-[80px]">
-          <img src="/about/people4.png" alt="photo" />
+          <MImage
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.2, once: true }}
+            custom={1.5}
+            variants={textAnimation} 
+            src="/about/people3.png" 
+            alt="photo"
+          />
+        </motion.div>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 0.2, once: true }} className="flex  justify-between mb-[80px]">
+          <MImage 
+            initial="hidden"
+            whileInView="visible"
+            variants={textAnimation2}
+            custom={1.5}
+            viewport={{ amount: 0.2, once: true }}
+            src="/about/people4.png"
+            alt="photo"
+          />
           <div className="w-[630px]">
-            <h3 className="text-xl  mb-[50px]">СЕКРЕТЫ ИГРЫ МАФИЯ</h3>
-            <p className="text-base font-involveBQ">
+            <motion.h3 variants={textAnimation} custom={1} className="text-xl  mb-[50px]">СЕКРЕТЫ ИГРЫ МАФИЯ</motion.h3>
+            <motion.p variants={textAnimation} custom={2} className="text-base font-involveBQ">
               Мы не просто проводим игры, мы создаем целые истории, в которые
               вовлечены все участники. Наши интересные сценарии разработаны с
               учетом всех деталей, чтобы каждый ход игры был органичным и
               захватывающим. Мы учитываем предпочтения и интересы наших игроков,
               чтобы обеспечить максимальное удовольствие от игрового процесса.
-            </p>
+            </motion.p>
           </div>
-        </div>
+        </motion.div>
       </div>
-      <div className="my-[120px] text-primary">
-        <div className="flex flex-col items-center justify-between mb-[50px]">
-          <h2 className="text-[48px] font-keetanoKB mb-[40px]">
+      <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 0.2, once: true }} className="my-[120px] text-primary">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 0.2, once: true }} className="flex flex-col items-center justify-between mb-[50px]">
+          <motion.h2 variants={textAnimation3} custom={1} className="text-[48px] font-keetanoKB mb-[40px]">
             Часто задаваемые вопросы
-          </h2>
+          </motion.h2>
           <div className="text-center w-[810px] mb-[50px]">
-            <p className="text-base font-involveBQ">
+            <motion.p variants={textAnimation3} custom={1.1} className="text-base font-involveBQ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero
               volutpat sed cras ornare arcu dui vivamus.
-            </p>
+            </motion.p>
           </div>
-        </div>
-        <div className="flex flex-wrap items-center justify-between mb-[120px]">
+        </motion.div>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 0.2, once: true }} className="flex flex-wrap items-center justify-between mb-[120px]">
           <div className="">
             <div className="w-[500px] mb-[50px]">
-              <h3 className="text-xl mb-[20px]">Где проводятся игры?</h3>
-              <p className="text-base font-involveBQ">
+              <motion.h3 variants={textAnimation2} custom={1.2} className="text-xl mb-[20px]">Где проводятся игры?</motion.h3>
+              <motion.p variants={textAnimation2} custom={2.2} className="text-base font-involveBQ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Libero volutpat sed cras ornare arcu dui vivamus.
-              </p>
+              </motion.p>
             </div>
             <div className="w-[500px]">
-              <h3 className="text-xl mb-[20px]">Будут ли бонусы за друзей?</h3>
-              <p className="text-base font-involveBQ">
+              <motion.h3 variants={textAnimation2} custom={1.4} className="text-xl mb-[20px]">Будут ли бонусы за друзей?</motion.h3>
+              <motion.p variants={textAnimation2} custom={2.4} className="text-base font-involveBQ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Libero volutpat sed cras ornare arcu dui vivamus.
-              </p>
+              </motion.p>
             </div>
           </div>
           <div className="">
             <div className="w-[500px] mb-[50px]">
-              <h3 className="text-xl mb-[20px]">Сколько стоит сессия?</h3>
-              <p className="text-base font-involveBQ">
+              <motion.h3 variants={textAnimation} custom={1.6} className="text-xl mb-[20px]">Сколько стоит сессия?</motion.h3>
+              <motion.p variants={textAnimation} custom={2.6} className="text-base font-involveBQ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Libero volutpat sed cras ornare arcu dui vivamus.
-              </p>
+              </motion.p>
             </div>
             <div className="w-[500px]">
-              <h3 className="text-xl mb-[20px]">Могу ли я стать ведущим?</h3>
-              <p className="text-base font-involveBQ">
+              <motion.h3 variants={textAnimation} custom={1.8} className="text-xl mb-[20px]">Могу ли я стать ведущим?</motion.h3>
+              <motion.p variants={textAnimation} custom={2.8} className="text-base font-involveBQ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Libero volutpat sed cras ornare arcu dui vivamus.
-              </p>
+              </motion.p>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.section>
   );
 }

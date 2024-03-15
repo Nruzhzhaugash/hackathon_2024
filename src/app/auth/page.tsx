@@ -1,11 +1,11 @@
-import SigninPage from "@/pages/Signin/ui/SigninPage";
+import AuthPage from "@/pages/Auth/ui/AuthPage";
 import Layout from "@/widgets/Layout/Layout";
 
-export default function Signin() {
+export default function Auth() {
   return (
     <Layout type="login">
       <main className="container">
-        <SigninPage />
+        <AuthPage />
       </main>
     </Layout>
   );

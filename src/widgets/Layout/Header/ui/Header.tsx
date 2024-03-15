@@ -13,8 +13,6 @@ interface HeaderProps {
   type?: "login" | "profile";
 }
 
-// const data = [{ id: 1 }];
-
 export default function Header({ children, type }: HeaderProps) {
   const session = useSession();
   console.log(session);
@@ -34,7 +32,7 @@ export default function Header({ children, type }: HeaderProps) {
               />
             </Link>
           ) : (
-            <Link href="/signin">
+            <Link href="/api/auth/signin">
               <Button
                 label="Войти"
                 className="text-link font-obrazec uppercase text-[32px] font-extrabold"

@@ -34,6 +34,7 @@ export default function PlayerTable({
   changeSortCategory,
 }: PlayersTableProps): JSX.Element {
   const [sortedData, setSortedData] = useState<PlayerData[]>([]);
+  const [active, setActive] = useState<boolean>(false);
 
   useEffect(() => {
     const newData = [...data].sort((a, b) => {
@@ -112,7 +113,7 @@ export default function PlayerTable({
                   {id}
                 </Table.Cell>
                 <Table.Cell className="hover:underline text-[20px] py-5 text-primary font-normal font-involveRG">
-                  <Link href={`/profile/${id}`}>{name}</Link>
+                  <Link href={""}>{name}</Link>
                 </Table.Cell>
                 <Table.Cell className="text-[20px] py-5 text-primary font-normal font-involveRG">
                   {points}

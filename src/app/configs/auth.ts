@@ -31,7 +31,7 @@ export const authConfig: AuthOptions = {
       },
     }),
   ],
-  pages: {
-    signIn: "/signin",
-  },
+  // pages: {
+  //   signIn: "/auth",
+  // },
 };

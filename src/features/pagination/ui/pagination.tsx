@@ -3,7 +3,7 @@ import React from 'react'
 interface PaginationProps {
   ratingPerPage: number;
   totalRating: number;
-  currentPage: number;
+  currentPage?: number;
   paginate: (pageNumber: number) => void;
 }
 

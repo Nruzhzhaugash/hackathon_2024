@@ -122,8 +122,8 @@ export default function RatingPage() {
   const [ratingPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
   const [data] = useState(initialData);
-  const [sortColumn, setSortColumn] = useState<keyof PlayerData>("points");
-  const [sortOrder, setSortOrder] = useState<SortOrder>("desc");
+  const [sortColumn, setSortColumn] = useState<any>("points");
+  const [sortOrder, setSortOrder] = useState<SortOrder>("asc");
 
   const sortedData = [...data].sort((a, b) => {
     if (sortColumn === "name") {

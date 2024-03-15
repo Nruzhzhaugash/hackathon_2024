@@ -11,13 +11,13 @@ export default function Navbar() {
   return (
     <nav className="flex items-center gap-11">
       <Link
-        href="/   "
+        href="/about "
         className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         О клубе
       </Link>
       <Link
-        href="/"
+        href="/shedule"
         className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
         Расписание
@@ -35,10 +35,10 @@ export default function Navbar() {
         Рейтинг
       </Link>
       <Link
-        href=""
+        href="/presenter-order"
         className="whitespace-nowrap font-obrazec uppercase font-extrabold text-link text-[32px]"
       >
-        Магазин
+        Заказ ведущего
       </Link>
     </nav>
   );
