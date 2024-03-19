@@ -1,6 +1,7 @@
 export default function Logo() {
   return (
     <svg
+      className="mmd:w-[38.7px] mmd:h-[14px]"
       xmlns="http://www.w3.org/2000/svg"
       width="172"
       height="64"

@@ -1,9 +1,6 @@
 import React from "react";
 
-
-
 const InputBlock: React.FC = ({ handleRegister }) => {
-
     const [username, setUsername] = React.useState("");
     const [lastname, setLastname] = React.useState("");
     const [nickname, setNickname] = React.useState("");
@@ -21,7 +18,7 @@ const InputBlock: React.FC = ({ handleRegister }) => {
           <div className="mb-[50px]">
             <h2 className="text-xl mb-[20px]">Имя</h2>
             <input
-              type="text"}
+              type="text"
               placeholder="Введите свое имя"
               className="text-base text-primary w-[265px] h-[50px] font-involveSB border-brown placeholder-brown bg-transparent"
               value={username}
@@ -125,3 +122,5 @@ const InputBlock: React.FC = ({ handleRegister }) => {
     </form>
   );
 }
+
+export default InputBlock;

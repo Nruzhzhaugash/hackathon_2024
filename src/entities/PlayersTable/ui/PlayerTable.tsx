@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Table } from "flowbite-react";
 import "./styles.scss";
 import Link from "next/link";
+import Arrow from "@/shared/ui/icons/rating/arrow";
 
 type PlayerData = {
   id: number;
@@ -22,6 +23,7 @@ interface PlayersTableProps {
   sortColumn: keyof PlayerData;
   sortOrder: SortOrder;
   changeSortCategory: (columnName: keyof PlayerData) => void;
+  searchTerm: string;
 }
 
 type SortOrder = "asc" | "desc";
@@ -31,10 +33,10 @@ export default function PlayerTable({
   currentPage,
   sortColumn,
   sortOrder,
+  searchTerm,
   changeSortCategory,
 }: PlayersTableProps): JSX.Element {
   const [sortedData, setSortedData] = useState<PlayerData[]>([]);
-  const [active, setActive] = useState<boolean>(false);
 
   useEffect(() => {
     const newData = [...data].sort((a, b) => {
@@ -48,8 +50,11 @@ export default function PlayerTable({
   }, [data, sortColumn, sortOrder]);
 
   useEffect(() => {
-    setSortedData(data);
-  }, [data]);
+    const filteredData = data.filter((player) =>
+      player.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setSortedData(filteredData);
+  }, [data, searchTerm]);
 
   const handleSort = (columnName: keyof PlayerData) => {
     changeSortCategory(columnName);
@@ -58,7 +63,7 @@ export default function PlayerTable({
   return (
     <div className="overflow-x-auto">
       <Table className="bg-transaprent">
-        <Table.Head className="bg-transparent rating__table border-primary">
+        <Table.Head className=" bg-transparent rating__table border-primary">
           <Table.HeadCell className="pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary">
             №
           </Table.HeadCell>
@@ -69,34 +74,34 @@ export default function PlayerTable({
             Имя игрока
           </Table.HeadCell>
           <Table.HeadCell
-            className="hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary"
+            className="hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary flex "
             onClick={() => handleSort("points")}
           >
-            Очки
+            Очки {sortColumn === "points" && <Arrow direction={sortOrder} />}
           </Table.HeadCell>
           <Table.HeadCell
             className="hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary"
             onClick={() => handleSort("koff")}
           >
-            Коэфф.
+            Коэфф. {sortColumn === "koff" && <Arrow direction={sortOrder} />}
           </Table.HeadCell>
           <Table.HeadCell
-            className="hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary"
+            className="hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary flex"
             onClick={() => handleSort("trophy")}
           >
-            Трофеи
+            Трофеи {sortColumn === "trophy" && <Arrow direction={sortOrder} />}
           </Table.HeadCell>
           <Table.HeadCell
             className="hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary"
             onClick={() => handleSort("games")}
           >
-            Игры
+            Игры {sortColumn === "games" && <Arrow direction={sortOrder} />}
           </Table.HeadCell>
           <Table.HeadCell
-            className="hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary"
+            className="hover:underline cursor-pointer pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary flex"
             onClick={() => handleSort("wins")}
           >
-            Победы
+            Победы {sortColumn === "wins" && <Arrow direction={sortOrder} />}
           </Table.HeadCell>
           <Table.HeadCell className="pb-5 bg-transparent font-normal font-involveRG normal-case text-[20px] text-primary">
             Поражения
