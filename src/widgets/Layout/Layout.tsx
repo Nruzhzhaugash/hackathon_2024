@@ -1,6 +1,9 @@
-import React, { ReactNode } from "react";
+'use client'
+import React, { ReactNode, useState } from "react";
 import Header from "./Header/ui/Header";
 import Footer from "./Footer/ui/Footer";
+import InsideBurger from "@/entities/Burger/ui/Burger";
+import './styles.scss';
 
 interface LayoutProps {
   children: ReactNode;
@@ -8,23 +11,31 @@ interface LayoutProps {
 }
 
 export default function Layout({ children, type }: LayoutProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  
   return (
-    <main className="main">
-      {type === "login" && (
-        <>
-          <Header />
-            {children}
-          <Footer />
-        </>
+    <> 
+      {isMenuOpen && (
+        <div className="burger__menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <InsideBurger />
+        </div>
       )}
-      {type === "profile" && (
-        <>
-          <Header />
+      <main className="main">
+        {type === "login" && (
+          <>
+            <Header onClick={() => setIsMenuOpen(!isMenuOpen)} />
             {children}
-          <Footer />
-        </>
-      )}
-    </main>
+            <Footer />
+          </>
+        )}
+        {type === "profile" && (
+          <>
+            <Header onClick={() => setIsMenuOpen(!isMenuOpen)} />
+            {children}
+            <Footer />
+          </>
+        )}
+      </main>
+    </>
   );
 }
-

@@ -1,0 +1,20 @@
+.presenter__mobile__bg {
+  background: url('/presenter_order/mobileRecord.png') no-repeat;
+  background-color: rgba(67, 25, 13, 0.70);
+  background-size: cover;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .presenter__mobile__bg {
+
+    width: 100%;
+    display: block;
+    height: 332px;
+  }
+}

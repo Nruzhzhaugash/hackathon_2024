@@ -1,7 +1,5 @@
-// export { Home as default } from "../pages/Home/ui";
-import { MainPage } from "@/pages/Main/ui/MainPage";
+import MainPage from "@/pages/Main/ui/MainPage";
 import Layout from "@/widgets/Layout/Layout";
-
 
 export default function Home() {
   return (
