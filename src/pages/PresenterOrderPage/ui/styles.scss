@@ -1,0 +1,24 @@
+.presenter__order {
+
+  &__bg {
+    background-image: url('/presenter_order/presenter_order_img.png');
+    filter: brightness(0.8) contrast(1.2);
+    background-color: rgba(67, 25, 13, 0.70);
+    padding-top: 240px;
+    padding-left: 270px;
+    padding-right: 270px;
+    width: 100%;
+    height: 696px;
+  }
+}
+
+@media (max-width: 785px) {
+
+  .presenter__order {
+
+
+    &__bg {
+      display: none;
+    }
+  }
+}
