@@ -69,9 +69,10 @@ const RegistrationPage: React.FC = () => {
               <h2 className="text-xl mb-[20px]">Имя</h2>
               <input
                 type="text"
+                name="username"
                 placeholder="Введите свое имя"
                 className="text-base text-primary w-[265px] h-[50px] font-involveSB border-brown placeholder-brown bg-transparent"
-                value={formType.password}
+                value={formType.username}
                 onChange={(e) => setUsername(e.target.value)}
               />
             </div>
@@ -79,9 +80,10 @@ const RegistrationPage: React.FC = () => {
               <h2 className="text-xl mb-[20px]">Почта</h2>
               <input
                 type="email"
+                name="email"
                 placeholder="Введите свою почту"
                 className="text-base text-primary w-[375px] h-[50px] font-involveSB border-brown placeholder-brown bg-transparent"
-                value={email}
+                value={formType.email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
@@ -89,9 +91,10 @@ const RegistrationPage: React.FC = () => {
               <h2 className="text-xl mb-[20px]">Пароль</h2>
               <input
                 type="password"
+                name="password"
                 placeholder="Введите пароль"
                 className="text-base text-primary w-[210px] h-[50px] font-involveSB border-brown placeholder-brown bg-transparent"
-                value={password}
+                value={formType.password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
@@ -101,19 +104,21 @@ const RegistrationPage: React.FC = () => {
               <h2 className="text-xl mb-[20px]">Фамилия</h2>
               <input
                 type="text"
+                name="lastname"
                 placeholder="Введите свою фамилию"
                 className="text-base text-primary font-involveSB border-brown placeholder-brown bg-transparent"
-                value={lastname}
+                value={formType.lastname}
                 onChange={(e) => setLastname(e.target.value)}
               />
             </div>
             <div className="mb-[50px]">
               <h2 className="text-xl mb-[20px]">Номер</h2>
               <input
-                type="number"
+                type="tel"
+                name="phoneNumber"
                 placeholder="Введите свой номер"
                 className="text-base text-primary font-involveSB border-brown placeholder-brown bg-transparent"
-                value={phoneNumber}
+                value={formType.phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
               />
             </div>
