@@ -18,6 +18,21 @@ const RegistrationPage: React.FC = () => {
   const [password, setPassword] = React.useState("");
   const [confirmPassword, setConfirmPassword] = React.useState("");
   const [gender, setGender] = React.useState("");
+  const [formType, setFormType] = React.useState({
+    username: '',
+    lastname: '',
+    nickname: '',
+    email: '',
+    phoneNumber: '',
+    birthdate: '',
+    password: '',
+    confirmPassword: '',
+    gender: ''
+  })
+
+  const handleChange = ({ target: { value, name } }: any) => {
+    setFormType({ ...formType, [name]: value })
+  }
 
   const handleRegister = () => {
     if (password !== confirmPassword) {
@@ -56,7 +71,7 @@ const RegistrationPage: React.FC = () => {
                 type="text"
                 placeholder="Введите свое имя"
                 className="text-base text-primary w-[265px] h-[50px] font-involveSB border-brown placeholder-brown bg-transparent"
-                value={username}
+                value={formType.password}
                 onChange={(e) => setUsername(e.target.value)}
               />
             </div>
