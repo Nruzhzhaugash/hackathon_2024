@@ -50,7 +50,7 @@ export default function PlayerTable({
   }, [data, sortColumn, sortOrder]);
 
   useEffect(() => {
-    const filteredData = data.filter(player => player.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    const filteredData = data.filter(player => player.name.toLowerCase().includes(searchTerm.toLowerCase()))  ;
     setSortedData(filteredData);
   }, [data, searchTerm]);
 

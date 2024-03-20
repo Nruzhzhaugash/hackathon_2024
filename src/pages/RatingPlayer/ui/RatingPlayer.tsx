@@ -28,7 +28,7 @@ const initialData = [
   },
   {
     id: 3,
-    name: "Южная",
+    name: "Не гей",
     points: 12,
     koff: "1.03",
     trophy: 32,
@@ -78,7 +78,7 @@ const initialData = [
   },
   {
     id: 8,
-    name: "Южная",
+    name: "Пепси",
     points: 15,
     koff: "1.08",
     trophy: 36,
@@ -88,7 +88,7 @@ const initialData = [
   },
   {
     id: 9,
-    name: "Южная",
+    name: "Гей",
     points: 19,
     koff: "1.09",
     trophy: 37,
@@ -98,7 +98,7 @@ const initialData = [
   },
   {
     id: 10,
-    name: "Южная",
+    name: "Канва",
     points: 22,
     koff: "1.10",
     trophy: 38,
@@ -108,7 +108,7 @@ const initialData = [
   },
   {
     id: 11,
-    name: "Южная",
+    name: "Жола гей",
     points: 28,
     koff: "1.11",
     trophy: 38,
@@ -160,7 +160,7 @@ export default function RatingPage() {
   };
 
   useEffect(() => {
-    setCurrentPage(1)
+    setCurrentPage(1);
   }, [searchTerm])
 
   const overallRating = () => {
