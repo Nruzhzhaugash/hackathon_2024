@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Squash as Hamburger } from "hamburger-react";
 import InsideBurger from "@/entities/Burger/ui/Burger";
-import './Burger.scss'
+import "./Burger.scss";
 
 interface IBurger {
   onClick: () => void;
@@ -20,10 +20,8 @@ export default function Burger({ onClick }: IBurger) {
     <div onClick={onClick} ref={ref} className="lg:hidden ">
       <Hamburger color="#F5ECDC" toggled={isOpen} size={20} toggle={setOpen} />
       <AnimatePresence>
-        {isOpen && (
-          <InsideBurger onClick={(prev) => setOpen(!prev)} />
-        )}
+        {isOpen && <InsideBurger onClick={(prev) => setOpen(!prev)} />}
       </AnimatePresence>
     </div>
   );
-};
+}
